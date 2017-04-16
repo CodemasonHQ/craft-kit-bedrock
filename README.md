@@ -1,5 +1,5 @@
 # Craft Kit - Bedrock (WordPress)
-This is the official [craft kit](http://mason.ci/docs/craft-kits) for [Bedrock](https://roots.io/bedrock/) by [Codemason[(http://mason.ci). 
+This is the official [craft kit](http://mason.ci/docs/craft-kits) for [Bedrock](https://roots.io/bedrock/) by [Codemason](http://mason.ci). 
 
 ```
 $ mason craft bedrock
