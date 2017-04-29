@@ -10,23 +10,19 @@ Craft kits let you Dockerize your application with one command. They are an exce
 Then with [Codemason](http://mason.ci), you can deploy your app to a server in a matter of minutes!
 
 ## Requirements 
-> This guide assumes you have:
-> - Installed the [Mason CLI](http://mason.ci/docs/installation)
+This guide assumes you have:
+- Installed the [Mason CLI](http://mason.ci/docs/installation)
 
 ## Configuration
-Copy the `.env.example` file to `.env`
+Before we start, make sure you have copied the `.env.example` file to `.env`.
 
-Ensure that you update your `.env` file with correct database values
+Then update your `.env` file with the correct database values and set the correct `WP_HOME`.
 ```
 DB_HOST=mysql
 DB_NAME=demo
 DB_USER=demo
 DB_PASSWORD=secret
-```
-
-Generate your security keys with the WP CLI 
-```
-$ docker-compose run --rm app wp dotenv salts generate --allow-root
+WP_HOME=http://localhost
 ```
 
 ## Quickstart
@@ -46,12 +42,17 @@ Spin up your development environment with Docker (add the `-d` flag to the comma
 $ docker-compose up
 ```
 
+Generate your security keys with the WP CLI
+```
+$ docker-compose run --rm app wp dotenv salts generate --allow-root
+```
+
 That's all! You're now running your Bedrock Wordpress application with Docker!
 
-You'll be able to access your application at http://<docker-ip>, where <docker-ip> is the boot2docker ip or localhost if you are running Docker natively.
+You'll be able to access your application at `http://<docker-ip>`, where <docker-ip> is the boot2docker ip or localhost if you are running Docker natively.
 
 ## Deployment
-Deploying is just as easy with [Codemason](http://mason.ci). For more detailed instructions, see our [documentation](http://mason.ci/docs/quickstart#deploy-dreams).
+Deploying is just as easy with [Codemason](http://mason.ci). For a more detailed guide to deployment, see our [documentation](http://mason.ci/docs/quickstart#deploy-dreams).
 
 Create an application on Codemason for your app
 ```
@@ -74,3 +75,11 @@ Deploy
 $ mason deploy --to bedrock-app
 ```
 
+Update your `WP_HOME` and `WP_SITEURL` environment variables on Codemason to match your domain or server's IP.
+```
+WP_HOME=http://my-cool-bedrock-app.com
+WP_SITEURL=http://my-cool-bedrock-app.com/wp
+```
+> NOTE: You must use the absolute URL as environment variables do not get parsed.
+
+Finish upgrade, start your services and you now have your Bedrock Wordpress application running on your server!
