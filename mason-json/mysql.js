@@ -1,6 +1,6 @@
 module.exports = {
   name: 'mysql',
-  image: 'mysql',
+  image: 'mariadb',
   type: 'service',
   volumes: {
     './storage/data/mysql':'/var/lib/mysql'
