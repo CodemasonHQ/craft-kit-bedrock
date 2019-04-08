@@ -1,5 +1,5 @@
 # Craft Kit - Bedrock (WordPress)
-This is the official [craft kit](http://mason.ci/docs/craft-kits) for [Bedrock](https://roots.io/bedrock/) by [Codemason](http://mason.ci). 
+This is the official [craft kit](https://codemason.io/docs/craft-kits) for [Bedrock](https://roots.io/bedrock/) by [Codemason](https://codemason.io). 
 
 ```
 $ mason craft bedrock
@@ -7,11 +7,11 @@ $ mason craft bedrock
 
 Craft kits let you Dockerize your application with one command. They are an excellent way to ease into building Docker powered apps without having to learn the ins and outs of Docker.
 
-Then with [Codemason](http://mason.ci), you can deploy your app to a server in a matter of minutes!
+Then with [Codemason](https://codemason.io), you can deploy your app to a server in a matter of minutes!
 
 ## Requirements 
 This guide assumes you have:
-- Installed the [Mason CLI](http://mason.ci/docs/installation)
+- Installed the [Mason CLI](https://codemason.io/docs/installation)
 
 ## Configuration
 Before we start, make sure you have copied the `.env.example` file to `.env`.
@@ -44,7 +44,7 @@ $ docker-compose up
 
 Generate your security keys with the WP CLI
 ```
-$ docker-compose run --rm app wp dotenv salts generate --allow-root
+$ docker-compose run --rm web wp dotenv salts generate --allow-root
 ```
 
 That's all! You're now running your Bedrock Wordpress application with Docker!
@@ -52,11 +52,11 @@ That's all! You're now running your Bedrock Wordpress application with Docker!
 You'll be able to access your application at `http://<docker-ip>`, where <docker-ip> is the boot2docker ip or localhost if you are running Docker natively.
 
 ## Deployment
-Deploying is just as easy with [Codemason](http://mason.ci). For a more detailed guide to deployment, see our [documentation](http://mason.ci/docs/quickstart#deploy-dreams).
+Deploying is just as easy with [Codemason](https://codemason.io). For a more detailed guide to deployment, see our [documentation](https://codemason.io/docs/quickstart#deploy-dreams).
 
 Create an application on Codemason for your app
 ```
-$ mason create --application bedrock-app
+$ mason create bedrock-app
 ```
 
 Push your code to your Codemason Git remote to build it into a Docker image
@@ -66,7 +66,7 @@ $ git push codemason master
 
 Deploy
 ```
-$ mason deploy --to bedrock-app
+$ mason deploy bedrock-app
 ```
 
 Update your `WP_HOME` and `WP_SITEURL` environment variables on Codemason to match your domain or server's IP.
